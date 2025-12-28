@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { cn, formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { cn, formatPrice } from "@/lib/utils";
-// import { AddToCartButton } from "@/components/app/AddToCartButton";
-// import { StockBadge } from "@/components/app/StockBadge";
+import { useState } from "react";
+import { AddToCartButton } from "@/components/app/AddToCartButton";
+import { StockBadge } from "@/components/app/StockBadge";
 import type { FILTER_PRODUCTS_BY_NAME_QUERYResult } from "@/sanity.types";
 
 type Product = FILTER_PRODUCTS_BY_NAME_QUERYResult[number];
@@ -125,18 +125,18 @@ export function ProductCard({ product }: ProductCardProps) {
           <p className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
             {formatPrice(product.price)}
           </p>
-          {/* <StockBadge productId={product._id} stock={stock} /> */}
+          <StockBadge productId={product._id} stock={stock} />
         </div>
       </CardContent>
 
       <CardFooter className="mt-auto p-5 pt-0">
-        {/* <AddToCartButton
+        <AddToCartButton
           productId={product._id}
           name={product.name ?? "Unknown Product"}
           price={product.price ?? 0}
           image={mainImageUrl ?? undefined}
           stock={stock}
-        /> */}
+        />
       </CardFooter>
     </Card>
   );

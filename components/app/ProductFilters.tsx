@@ -301,7 +301,7 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
           }
           className={`mt-4 ${
             isPriceActive
-              ? "[&_[role=slider]]:border-amber-500 [&_[role=slider]]:ring-amber-500"
+              ? "**:[[role=slider]]:border-amber-500 **:[[role=slider]]:ring-amber-500"
               : ""
           }`}
         />

@@ -1,6 +1,7 @@
 import { CategoryTiles } from "@/components/app/CategoryTiles";
 import { FeaturedCarousel } from "@/components/app/FeaturedCarousel";
 import { FeaturedCarouselSkeleton } from "@/components/app/FeaturedCarouselSkeleton";
+import { ProductSection } from "@/components/app/ProductSection";
 import { sanityFetch } from "@/sanity/lib/live";
 import { ALL_CATEGORIES_QUERY } from "@/sanity/lib/queries/categories";
 import {
@@ -107,11 +108,11 @@ export default async function Home({ searchParams }: PageProps) {
 
       {/* Products Section */}
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* <ProductSection
+        <ProductSection
           categories={categories}
           products={products}
           searchQuery={searchQuery}
-        /> */}
+        />
       </div>
     </div>
   );
