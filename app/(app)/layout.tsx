@@ -5,15 +5,20 @@ import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/app/Header";
 import { ChatStoreProvider } from "@/lib/store/chat-store-provider";
 import { CartSheet } from "@/components/app/CartSheet";
+import { ChatSheet } from "@/components/app/ChatSheet";
+import { AppShell } from "@/components/app/AppShell";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClerkProvider>
       <CartStoreProvider>
         <ChatStoreProvider>
-          <Header />
-          <main>{children}</main>
+          <AppShell>
+            <Header />
+            <main>{children}</main>
+          </AppShell>
           <CartSheet />
+          <ChatSheet />
           <Toaster position="bottom-center" />
           <SanityLive />
         </ChatStoreProvider>
