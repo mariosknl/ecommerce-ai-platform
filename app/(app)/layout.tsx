@@ -2,14 +2,21 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
 import { CartStoreProvider } from "@/lib/store/cart-store-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { Header } from "@/components/app/Header";
+import { ChatStoreProvider } from "@/lib/store/chat-store-provider";
+import { CartSheet } from "@/components/app/CartSheet";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClerkProvider>
       <CartStoreProvider>
-        <main>{children}</main>
-        <Toaster position="bottom-center" />
-        <SanityLive />
+        <ChatStoreProvider>
+          <Header />
+          <main>{children}</main>
+          <CartSheet />
+          <Toaster position="bottom-center" />
+          <SanityLive />
+        </ChatStoreProvider>
       </CartStoreProvider>
     </ClerkProvider>
   );
