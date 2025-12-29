@@ -1,12 +1,12 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import { SanityLive } from "@/sanity/lib/live";
-import { CartStoreProvider } from "@/lib/store/cart-store-provider";
-import { Toaster } from "@/components/ui/sonner";
-import { Header } from "@/components/app/Header";
-import { ChatStoreProvider } from "@/lib/store/chat-store-provider";
+import { AppShell } from "@/components/app/AppShell";
 import { CartSheet } from "@/components/app/CartSheet";
 import { ChatSheet } from "@/components/app/ChatSheet";
-import { AppShell } from "@/components/app/AppShell";
+import { Header } from "@/components/app/Header";
+import { Toaster } from "@/components/ui/sonner";
+import { CartStoreProvider } from "@/lib/store/cart-store-provider";
+import { ChatStoreProvider } from "@/lib/store/chat-store-provider";
+import { SanityLive } from "@/sanity/lib/live";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
